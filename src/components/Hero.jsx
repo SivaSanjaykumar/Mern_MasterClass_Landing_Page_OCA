@@ -1,6 +1,6 @@
 import ReservedSeatBtn from "./ReservedSeatBtn";
 import Timer from "./Timer";
-
+import BlurText from "@/animations/BlurText";
 const Hero = () => {
   return (
     <header className='bg-black text-white flex flex-col items-center bg-[url("https://assets.prebuiltui.com/images/components/hero-section/hero-background-image.png")] bg-cover bg-center bg-no-repeat pb-20'>
@@ -34,30 +34,68 @@ const Hero = () => {
       </div>
 
       {/* 🔥 Heading */}
-      <h1 className="text-4xl md:text-[64px]/[82px] text-center max-w-4xl mt-6 leading-tight px-4">
-        Become a <span className="text-[#A6FF5D]">MERN Stack Developer</span> &
-        Crack MNC Jobs
-      </h1>
+      <div className="text-4xl md:text-[64px] font-bold text-center max-w-4xl mt-6 leading-tight px-4 flex flex-wrap justify-center gap-x-4">
+        <BlurText
+          text="Become a"
+          delay={120}
+          animateBy="words"
+          direction="top"
+          stepDuration={0.4}
+        />
+        <BlurText
+          text="MERN"
+          delay={120}
+          animateBy="words"
+          direction="top"
+          stepDuration={0.4}
+          className="text-green-500" // 👈 green only for MERN
+        />
+        <BlurText
+          text="Stack Developer & Crack"
+          delay={120}
+          animateBy="words"
+          direction="top"
+          stepDuration={0.4}
+        />
+        <BlurText
+          text="MNC Jobs"
+          delay={120}
+          animateBy="words"
+          direction="top"
+          stepDuration={0.4}
+        />
+      </div>
 
       {/* 🔥 Subtext */}
-      <p className="text-sm md:text-base text-gray-300 text-center max-w-lg mt-4 px-4">
-        Learn MongoDB, Express, React & Node by building real-world projects
-        with expert mentorship.
-      </p>
+      <BlurText
+        text="Learn MongoDB, Express, React & Node by building real-world"
+        delay={80}
+        animateBy="words"
+        direction="top"
+        stepDuration={0.3}
+        className="text-sm md:text-base text-gray-300 text-center max-w-lg mt-4 px-4"
+      />
+      <BlurText
+        text="projects with expert mentorship."
+        delay={80}
+        animateBy="words"
+        direction="top"
+        stepDuration={0.3}
+        className="text-sm md:text-base text-gray-300 text-center max-w-lg mt-4 px-4"
+      />
 
       {/* 🔥 Buttons */}
-      <ReservedSeatBtn/>
+      <ReservedSeatBtn />
 
       {/* 🔥 Social Proof */}
       <div className="flex flex-wrap justify-center gap-6 mt-8 text-m text-gray-300">
         <span>⭐ 4.8 Rating</span>
-        <span>👨‍🎓 500+ Students</span>
+        <span>👨‍🎓 1000+ Students</span>
         <span>💼 Placement Assistance</span>
       </div>
 
       <Timer />
 
-      
       <p className="text-xl text-green-400 text-center mt-12 animate-pulse">
         ⏳ Offer Ending Soon
       </p>
