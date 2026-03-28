@@ -4,6 +4,7 @@ import { Video, Clock, Calendar, Gift } from "lucide-react";
 import ReservedSeatBtn from "../components/ReservedSeatBtn";
 import Timer from "../components/Timer";
 import RegisterForm from "./RegisterForm"; // adjust path if needed
+import DecryptedText from "@/animations/DecryptedText";
 
 const details = [
   {
@@ -32,8 +33,10 @@ const MasterclassDetails = () => {
   const [flipped, setFlipped] = useState(false);
 
   return (
-    <section id="masterclass-details" className="bg-black text-white py-28 px-6">
-
+    <section
+      id="masterclass-details"
+      className="bg-black text-white py-28 px-6"
+    >
       {/* Heading */}
       <div className="text-center mb-20">
         <h2 className="text-3xl md:text-5xl font-bold">
@@ -46,7 +49,6 @@ const MasterclassDetails = () => {
 
       {/* Main Grid */}
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-
         {/* LEFT */}
         <div className="relative">
           <div className="absolute left-4 top-0 h-full w-[2px] bg-[#A6FF5D]/20"></div>
@@ -79,7 +81,6 @@ const MasterclassDetails = () => {
               flipped ? "[transform:rotateY(-180deg)]" : ""
             }`}
           >
-
             {/* FRONT */}
             <div className="absolute w-full h-full backface-hidden">
               <div className="relative p-[1px] rounded-2xl bg-gradient-to-r from-[#A6FF5D]/40 to-white/10">
@@ -90,12 +91,33 @@ const MasterclassDetails = () => {
                     <Gift className="text-[#A6FF5D]" size={28} />
                   </div>
 
-                  <p className="text-gray-400 text-sm mb-2">🔥 Early Bird Offer</p>
 
-                  <h3 className="text-5xl font-bold text-[#A6FF5D] mb-2 animate-pulse">
-                    FREE
-                  </h3>
-
+                  <div className="text-center"> 
+                    <DecryptedText
+                    text="Early "
+                    animateOn="view"
+                    revealDirection="start"
+                    sequential
+                    useOriginalCharsOnly={false}
+                    className="text-4xl text-[#A6FF5D] font-bold animate-pulse"
+                  />
+                  <DecryptedText
+                    text="Bird "
+                    animateOn="view"
+                    revealDirection="start"
+                    sequential
+                    useOriginalCharsOnly={false}
+                    className="text-4xl text-[#fdfffc] font-bold animate-pulse"
+                  />
+                  <DecryptedText
+                    text="Offer 🚀"
+                    animateOn="view"
+                    revealDirection="start"
+                    sequential
+                    useOriginalCharsOnly={false}
+                    className="text-4xl text-[#A6FF5D] font-bold animate-pulse"
+                  /></div>
+                  
                   <p className="text-gray-500 text-xs line-through mb-3">
                     Worth ₹1999
                   </p>
@@ -103,7 +125,7 @@ const MasterclassDetails = () => {
                   <Timer />
 
                   <div className="flex justify-center mt-6">
-                    <ReservedSeatBtn onClick={() => setFlipped(true)} />
+                    <ReservedSeatBtn onClick={() => setFlipped(true)} label="Register here" />
                   </div>
 
                   <p className="text-xs text-red-400 mt-3 animate-pulse">
@@ -117,10 +139,8 @@ const MasterclassDetails = () => {
             <div className="absolute w-full h-full [transform:rotateY(-180deg)] backface-hidden">
               <RegisterForm setFlipped={setFlipped} />
             </div>
-
           </div>
         </div>
-
       </div>
     </section>
   );

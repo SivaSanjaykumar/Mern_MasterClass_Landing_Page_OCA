@@ -1,4 +1,4 @@
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Hero from "./components/Hero";
 import PainPoints from "./components/PainPoints";
 import AboutSection from "./sections/AboutSection";
@@ -11,21 +11,30 @@ import ShowCase from "./sections/ShowCase";
 import Testimonials from "./sections/Testimonials";
 import WhyDifferent from "./sections/WhyDifferent";
 
+// ✅ Landing page as its own component
+const LandingPage = () => (
+  <div>
+    <Hero />
+    <PainPoints />
+    <ShowCase />
+    <FeaturesGrid />
+    <WhyDifferent />
+    <Testimonials />
+    <Bonuses />
+    <MasterclassDetails />
+    <AboutSection />
+    <Footer />
+  </div>
+);
+
 const App = () => {
   return (
-    <div>
-      <Hero />
-      <PainPoints />
-      <ShowCase />
-      <FeaturesGrid/>
-      <WhyDifferent/>
-      <Testimonials/>
-      <Bonuses/>
-      <MasterclassDetails/>
-      <FAQ/>
-      <AboutSection/>
-      <Footer/>
-    </div>
+    <BrowserRouter>         {/* ✅ wraps everything */}
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/faq" element={<FAQ />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 

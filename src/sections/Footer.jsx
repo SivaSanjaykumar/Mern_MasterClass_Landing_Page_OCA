@@ -1,7 +1,10 @@
 import { MapPin, Phone, Mail, ArrowUp } from "lucide-react";
 import { FaFacebookF, FaYoutube, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+
 
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     <footer className="bg-[#0B1D2A] text-white px-6 py-16">
 
@@ -89,7 +92,7 @@ const Footer = () => {
           </div>
 
           {/* CTA */}
-          <button className="mt-8 bg-[#A6FF5D] text-black px-6 py-3 rounded-xl font-medium hover:scale-105 transition">
+          <button onClick={() => navigate("/faq")} className="mt-8 bg-[#A6FF5D] text-black px-6 py-3 rounded-xl font-medium hover:scale-105 transition">
             FAQs
           </button>
 
