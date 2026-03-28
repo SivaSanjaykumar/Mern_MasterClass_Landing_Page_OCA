@@ -48,7 +48,7 @@ const Hero = () => {
           animateBy="words"
           direction="top"
           stepDuration={0.4}
-          className="text-green-500" // 👈 green only for MERN
+          className="text-[#A6FF5D]" // 👈 green only for MERN
         />
         <BlurText
           text="Stack Developer & Crack"
