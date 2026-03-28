@@ -32,7 +32,7 @@ const MasterclassDetails = () => {
   const [flipped, setFlipped] = useState(false);
 
   return (
-    <section className="bg-black text-white py-28 px-6">
+    <section id="masterclass-details" className="bg-black text-white py-28 px-6">
 
       {/* Heading */}
       <div className="text-center mb-20">
