@@ -3,7 +3,7 @@ import { scrollToSection } from "../lib/scrollTo";
 
 const ReservedSeatBtn = ({ onClick, label = "Reserve Your Seat" }) => {
   const handleClick = () => {
-    scrollToSection("masterclass-details");
+    scrollToSection("register");
     if (onClick) onClick();
   };
 

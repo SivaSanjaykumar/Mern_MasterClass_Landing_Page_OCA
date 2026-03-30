@@ -10,11 +10,13 @@ import MasterclassDetails from "./sections/MasterClassDetails";
 import ShowCase from "./sections/ShowCase";
 import Testimonials from "./sections/Testimonials";
 import WhyDifferent from "./sections/WhyDifferent";
+import ScrollToTopBtn from "./components/ScrollToTopBtn";
 
 // ✅ Landing page as its own component
 const LandingPage = () => (
   <div>
     <Hero />
+    <ScrollToTopBtn/>
     <PainPoints />
     <ShowCase />
     <FeaturesGrid />

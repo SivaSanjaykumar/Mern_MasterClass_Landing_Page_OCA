@@ -101,16 +101,9 @@ const Footer = () => {
       </div>
 
       {/* ================= BOTTOM ================= */}
-      <div className="max-w-6xl mx-auto mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+      <div className="max-w-6xl mx-auto mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-center items-center text-sm text-gray-400">
 
         <p>© 2026 Ocean Academy. All Rights Reserved.</p>
-
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="mt-4 md:mt-0 w-10 h-10 flex items-center justify-center rounded-full bg-[#A6FF5D] text-black hover:scale-110 transition"
-        >
-          <ArrowUp size={18} />
-        </button>
 
       </div>
 

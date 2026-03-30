@@ -273,7 +273,7 @@ const Bonuses = () => {
         </div>
 
         {/* Heading */}
-        <div ref={headingRef} className="b-heading text-center mb-16">
+        <div id="bonuses" ref={headingRef} className="b-heading text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold leading-tight">
             Exclusive <span className="text-[#A6FF5D] green-glow">Bonus</span>{" "}
             worth ₹4500/-
