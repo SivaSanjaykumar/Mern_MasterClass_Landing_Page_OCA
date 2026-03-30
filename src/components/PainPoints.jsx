@@ -1,16 +1,36 @@
-import React, { useEffect, useRef } from 'react';
+import {
+  BookOpen,
+  Brain,
+  Code2,
+  Eye,
+  Rocket,
+  Scale,
+  Target,
+  Trophy,
+  Zap,
+} from "lucide-react";
+import React, { useEffect, useRef } from "react";
 
 const PainPoints = () => {
   const items = [
-    { icon: "😵‍💫", text: "Staring at code, feeling stuck while building projects?" },
-    { icon: "📐", text: "Struggling to create clean, scalable full-stack apps?" },
-    { icon: "💪", text: "Want to become confident in MERN development?" },
-    { icon: "👀", text: "Looking to learn real-world workflows from experts?" },
-    { icon: "⚡", text: "Want to build faster and smarter with best practices?" },
-    { icon: "⚖️", text: "Confused between frontend & backend balance?" },
-    { icon: "😫", text: "Feeling overwhelmed with too many tutorials?" },
-    { icon: "🏆", text: "Want to go from beginner to job-ready developer?" },
-    { icon: "🚀", text: "Ready to crack MNC jobs with your real skills?" },
+    {
+      icon: Brain,
+      text: "Staring at code, feeling stuck while building projects?",
+    },
+    {
+      icon: Code2,
+      text: "Struggling to create clean, scalable full-stack apps?",
+    },
+    { icon: Rocket, text: "Want to become confident in MERN development?" },
+    { icon: Eye, text: "Looking to learn real-world workflows from experts?" },
+    {
+      icon: Zap,
+      text: "Want to build faster and smarter with best practices?",
+    },
+    { icon: Scale, text: "Confused between frontend & backend balance?" },
+    { icon: BookOpen, text: "Feeling overwhelmed with too many tutorials?" },
+    { icon: Trophy, text: "Want to go from beginner to job-ready developer?" },
+    { icon: Target, text: "Ready to crack MNC jobs with your real skills?" },
   ];
 
   const headingRef = useRef(null);
@@ -22,11 +42,11 @@ const PainPoints = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('animate-in');
+            entry.target.classList.add("animate-in");
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.15 },
     );
 
     if (headingRef.current) observer.observe(headingRef.current);
@@ -51,7 +71,7 @@ const PainPoints = () => {
         }
 
         /* Staggered card delays */
-        ${items.map((_, i) => `.card-${i} { transition-delay: ${i * 80}ms; }`).join('\n')}
+        ${items.map((_, i) => `.card-${i} { transition-delay: ${i * 80}ms; }`).join("\n")}
 
         /* Glowing border on hover */
         .pain-card:hover .card-inner {
@@ -99,16 +119,14 @@ const PainPoints = () => {
         }
       `}</style>
 
-      <section className="bg-black text-white py-20 px-6 overflow-hidden">
-
+      <section className="bg-black text-white py-10 px-6 overflow-hidden">
         {/* Heading */}
         <div ref={headingRef} className="text-center mb-12 fade-up">
           <p className="text-sm text-gray-400 mb-2 tracking-widest uppercase">
             Is This You?
           </p>
           <h2 className="text-3xl md:text-5xl font-bold">
-            Are You{" "}
-            <span className="text-[#A6FF5D] glow-pulse">...</span>
+            Are You <span className="text-[#A6FF5D] glow-pulse">...</span>
           </h2>
         </div>
 
@@ -121,8 +139,12 @@ const PainPoints = () => {
               className={`pain-card relative p-[1px] rounded-xl bg-gradient-to-r from-[#A6FF5D]/30 to-white/10 fade-up card-${index} cursor-default`}
             >
               <div className="card-inner flex items-start gap-4 bg-gray-900 rounded-xl p-5 transition-all duration-300">
-                <span className="card-icon text-2xl select-none">{item.icon}</span>
-                <p className="text-sm text-gray-300 leading-relaxed">{item.text}</p>
+                <div className="card-icon p-2 rounded-lg bg-[#A6FF5D]/10 text-[#A6FF5D]">
+                  <item.icon size={20} strokeWidth={2.2} />
+                </div>
+                <p className="text-sm text-gray-300 leading-relaxed">
+                  {item.text}
+                </p>
               </div>
             </div>
           ))}
@@ -131,13 +153,12 @@ const PainPoints = () => {
         {/* Bottom Line */}
         <p
           ref={bottomRef}
-          className="text-center text-gray-400 mt-12 text-sm fade-up"
+          className="text-center text-gray-400 mt-10 text-sm tracking-wide fade-up"
         >
           If you relate to any of these, this{" "}
-          <span className="text-[#A6FF5D] font-medium">MERN Masterclass</span>{" "}
-          is for you 🚀
+          <span className="text-[#A6FF5D] font-semibold">MERN Masterclass</span>{" "}
+          will help you become a job-ready developer.
         </p>
-
       </section>
     </>
   );

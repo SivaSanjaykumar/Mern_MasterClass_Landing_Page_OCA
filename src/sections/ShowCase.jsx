@@ -172,7 +172,7 @@ const ShowCase = () => {
 
       <section
         ref={sectionRef}
-        className="bg-black text-white py-24 px-6 text-center relative overflow-hidden"
+        className="bg-black text-white py-10 px-6 text-center relative overflow-hidden"
       >
         {/* Ambient orbs */}
         <div className="orb absolute top-10 left-10 w-72 h-72 rounded-full bg-[#A6FF5D]/5 blur-3xl pointer-events-none" style={{ animationDuration: "8s" }} />
@@ -217,7 +217,7 @@ const ShowCase = () => {
           <img
             src={showcaseImg}
             alt="Course Preview"
-            className="rounded-xl shadow-2xl max-w-5xl w-full"
+            className="rounded-xl shadow-2xl max-w-3xl w-full"
           />
         </div>
 

@@ -4,8 +4,8 @@ import { motion } from "motion/react";
 
 const AboutSection = () => {
   return (
-    <section className="bg-black text-white py-28 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section className="bg-black text-white  pt-20 pb-10 px-6">
+      <div className="max-w-5xl mx-auto">
         {/* 🔥 MAIN GLOW CARD */}
         <BorderGlow
           className="p-10 md:p-14"

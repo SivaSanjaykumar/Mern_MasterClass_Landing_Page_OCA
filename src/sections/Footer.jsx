@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Footer = () => {
   const navigate = useNavigate();
   return (
-    <footer className="bg-[#0B1D2A] text-white px-6 py-16">
+    <footer className="bg-[#0B1D2A] text-white px-6 py-10">
 
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
 

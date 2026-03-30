@@ -8,7 +8,8 @@ import {
   Database,
   Server,
   ShieldCheck,
-  Cpu
+  Cpu,
+  RocketIcon,
 } from "lucide-react";
 import ReservedSeatBtn from "../components/ReservedSeatBtn";
 
@@ -62,22 +63,21 @@ const features = [
 
 const FeaturesGrid = () => {
   return (
-    <section className="bg-black text-white py-24 px-6">
-
+    <section className="bg-black text-white py-10 px-6">
       {/* 🔥 Heading */}
       <div className="text-center mb-16">
         <h2 className="text-3xl md:text-5xl font-bold">
           What You’ll <span className="text-[#A6FF5D]">Learn</span>
         </h2>
-
-        <p className="text-gray-400 mt-3 text-sm">
-          Master full-stack development step-by-step 🚀
+        
+        <p className="flex items-center justify-center gap-2 text-gray-400 mt-3 text-sm tracking-wide">
+          <RocketIcon className="text-[#A6FF5D]" size={16} />
+          Master full-stack development step by step with real-world projects.
         </p>
       </div>
 
       {/* 🔥 GRID */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-
+      <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {features.map((item, index) => (
           <motion.div
             key={index}
@@ -85,39 +85,32 @@ const FeaturesGrid = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1, duration: 0.4 }}
             viewport={{ once: true }}
-            className="group relative p-[1px] rounded-xl bg-gradient-to-r from-[#A6FF5D]/30 to-white/10"
+            className="group relative rounded-xl bg-[#A6FF5D] "
           >
-
             {/* 🔥 CARD */}
-            <div className="bg-gray-900 rounded-xl p-6 text-center border border-[#A6FF5D]/20 
-              group-hover:border-[#A6FF5D]/50 
+            <div
+              className="bg-gray-900 rounded-xl p-6 text-center border border-[#A6FF5D]/20 
+              group-hover:border-[#A6FF5D] 
               group-hover:shadow-[0_0_30px_rgba(166,255,93,0.15)]
               transform group-hover:-translate-y-2 
-              transition duration-300">
-
+              transition duration-300"
+            >
               {/* ICON */}
-              <div className="mb-4 flex justify-center">
-                {item.icon}
-              </div>
+              <div className="mb-4 flex justify-center">{item.icon}</div>
 
               {/* TITLE */}
-              <h3 className="text-lg font-semibold mb-2">
-                {item.title}
-              </h3>
+              <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
 
               {/* DESC */}
-              <p className="text-gray-400 text-sm">
-                {item.desc}
-              </p>
-
+              <p className="text-gray-400 text-sm">{item.desc}</p>
             </div>
-
           </motion.div>
         ))}
-
       </div>
-      <ReservedSeatBtn/>
-
+      <div className="mt-20">
+        <ReservedSeatBtn />
+      </div>
+      
     </section>
   );
 };

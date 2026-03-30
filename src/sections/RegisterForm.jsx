@@ -9,7 +9,7 @@ const RegisterForm = ({ setFlipped }) => {
     status: "",
   });
 
-  const isRegistrationClosed = false; // toggle this to open/close
+  const isRegistrationClosed = false;
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -21,67 +21,48 @@ const RegisterForm = ({ setFlipped }) => {
   };
 
   return (
-    <div className="bg-black text-white h-120 flex flex-col justify-center items-center px-6 py-8">
-      <div className="w-full max-w-md p-[1px] rounded-2xl bg-gradient-to-r from-[#A6FF5D]/40 to-white/10">
-        <div className="bg-gray-900 rounded-2xl p-8 border border-[#A6FF5D]/20">
+    // ✅ No fixed height — grows naturally to match front card
+    <div className="w-full">
+      <div className="w-full p-[1px] rounded-2xl"
+        style={{ background: "linear-gradient(135deg, rgba(166,255,93,0.3) 0%, rgba(255,255,255,0.06) 100%)" }}>
+        <div className="bg-[#0d0d0d] rounded-2xl p-8 border border-[#A6FF5D]/20">
 
-          {/* Heading */}
-          <h2 className="text-2xl font-bold mb-5 text-center">
+          <h2 className="text-2xl font-bold mb-6 text-center">
             Register for <span className="text-[#A6FF5D]">Free</span>
           </h2>
 
-          {/* Registration Closed Banner */}
-          {/* {isRegistrationClosed && (
-            <div className="bg-red-500 text-white text-sm font-semibold text-center px-4 py-3 rounded-lg mb-5">
-              Registration is closed. Please check back for the next session.
+          {isRegistrationClosed && (
+            <div className="bg-red-500/10 border border-red-500/30 text-red-400 text-sm font-semibold text-center px-4 py-3 rounded-lg mb-5">
+              Registration is closed. Check back for the next session.
             </div>
-          )} */}
+          )}
 
-          {/* Full Name */}
-          <label className="block text-sm font-semibold mb-1">Full Name</label>
+          <label className="block text-xs font-semibold text-gray-400 mb-1.5 tracking-wide uppercase">Full Name</label>
           <input
-            type="text"
-            name="name"
-            placeholder="Enter your full name"
-            value={formData.name}
-            onChange={handleChange}
-            disabled={isRegistrationClosed}
-            className="w-full mb-4 p-3 bg-[#0d1f2d] border border-[#A6FF5D]/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#A6FF5D]/50 disabled:opacity-50"
+            type="text" name="name" placeholder="Enter your full name"
+            value={formData.name} onChange={handleChange} disabled={isRegistrationClosed}
+            className="w-full mb-4 p-3 bg-black/40 border border-[#A6FF5D]/20 rounded-xl text-white placeholder-gray-600 text-sm focus:outline-none focus:border-[#A6FF5D]/50 transition-colors disabled:opacity-40"
           />
 
-          {/* Email */}
-          <label className="block text-sm font-semibold mb-1">Email Address</label>
+          <label className="block text-xs font-semibold text-gray-400 mb-1.5 tracking-wide uppercase">Email Address</label>
           <input
-            type="email"
-            name="email"
-            placeholder="Enter your email address"
-            value={formData.email}
-            onChange={handleChange}
-            disabled={isRegistrationClosed}
-            className="w-full mb-4 p-3 bg-[#0d1f2d] border border-[#A6FF5D]/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#A6FF5D]/50 disabled:opacity-50"
+            type="email" name="email" placeholder="Enter your email address"
+            value={formData.email} onChange={handleChange} disabled={isRegistrationClosed}
+            className="w-full mb-4 p-3 bg-black/40 border border-[#A6FF5D]/20 rounded-xl text-white placeholder-gray-600 text-sm focus:outline-none focus:border-[#A6FF5D]/50 transition-colors disabled:opacity-40"
           />
 
-          {/* Phone */}
-          <label className="block text-sm font-semibold mb-1">Phone Number</label>
+          <label className="block text-xs font-semibold text-gray-400 mb-1.5 tracking-wide uppercase">Phone Number</label>
           <input
-            type="tel"
-            name="phone"
-            placeholder="Enter your phone number"
-            value={formData.phone}
-            onChange={handleChange}
-            disabled={isRegistrationClosed}
-            className="w-full mb-4 p-3 bg-[#0d1f2d] border border-[#A6FF5D]/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#A6FF5D]/50 disabled:opacity-50"
+            type="tel" name="phone" placeholder="Enter your phone number"
+            value={formData.phone} onChange={handleChange} disabled={isRegistrationClosed}
+            className="w-full mb-4 p-3 bg-black/40 border border-[#A6FF5D]/20 rounded-xl text-white placeholder-gray-600 text-sm focus:outline-none focus:border-[#A6FF5D]/50 transition-colors disabled:opacity-40"
           />
 
-          {/* Current Status */}
-          <label className="block text-sm font-semibold mb-1">Current Status</label>
-          <div className="relative mb-5">
+          <label className="block text-xs font-semibold text-gray-400 mb-1.5 tracking-wide uppercase">Current Status</label>
+          <div className="relative mb-6">
             <select
-              name="status"
-              value={formData.status}
-              onChange={handleChange}
-              disabled={isRegistrationClosed}
-              className="w-full p-3 bg-[#0d1f2d] border border-[#A6FF5D]/20 rounded-lg text-gray-400 appearance-none focus:outline-none focus:border-[#A6FF5D]/50 disabled:opacity-50"
+              name="status" value={formData.status} onChange={handleChange} disabled={isRegistrationClosed}
+              className="w-full p-3 bg-black/40 border border-[#A6FF5D]/20 rounded-xl text-gray-400 appearance-none text-sm focus:outline-none focus:border-[#A6FF5D]/50 transition-colors disabled:opacity-40"
             >
               <option value="" disabled>Select your current status</option>
               <option value="student">Student</option>
@@ -89,39 +70,31 @@ const RegisterForm = ({ setFlipped }) => {
               <option value="working">Working Professional</option>
               <option value="other">Other</option>
             </select>
-            <ChevronDown
-              size={16}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
-            />
+            <ChevronDown size={15} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none" />
           </div>
 
-          {/* Submit Button */}
           <button
-            onClick={handleSubmit}
-            disabled={isRegistrationClosed}
-            className={`w-full py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition
+            onClick={handleSubmit} disabled={isRegistrationClosed}
+            className={`w-full py-3 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all duration-300 text-sm
               ${isRegistrationClosed
-                ? "bg-gradient-to-r from-cyan-500/50 to-blue-500/50 text-white/60 cursor-not-allowed"
-                : "bg-[#A6FF5D] text-black hover:opacity-90"
+                ? "bg-white/5 border border-white/10 text-white/40 cursor-not-allowed"
+                : "bg-[#A6FF5D] text-black hover:bg-[#b8ff70] hover:shadow-[0_0_24px_rgba(166,255,93,0.35)] active:scale-[0.98]"
               }`}
           >
             {isRegistrationClosed ? "Registration Closed" : "Register Now"}
-            <ArrowRight size={16} />
+            <ArrowRight size={15} />
           </button>
 
-          {/* Disclaimer */}
-          <p className="text-xs text-gray-500 text-center mt-4">
+          <p className="text-xs text-gray-600 text-center mt-4 leading-relaxed">
             By registering, you agree to receive updates about the masterclass via email and phone.
           </p>
 
-          {/* Back */}
           <button
             onClick={() => setFlipped(false)}
-            className="mt-3 text-sm text-gray-400 w-full text-center"
+            className="mt-3 text-sm text-gray-500 hover:text-gray-300 w-full text-center transition-colors duration-200"
           >
             ← Go Back
           </button>
-
         </div>
       </div>
     </div>
