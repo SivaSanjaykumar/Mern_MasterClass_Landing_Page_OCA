@@ -118,12 +118,6 @@ const SuccessModal = ({ onClose }) => (
           <MessageCircle size={18} />
           Join Our WhatsApp Community
         </a>
-        <button
-          onClick={onClose}
-          className="text-xs text-gray-600 hover:text-gray-400 transition-colors"
-        >
-          I'll join later
-        </button>
       </div>
     </div>
   </div>

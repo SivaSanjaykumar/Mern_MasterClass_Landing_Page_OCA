@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Video, Clock, Calendar, Award, PlayCircle } from "lucide-react";
 import RegisterForm from "./RegisterForm";
+import Timer from "@/components/Timer";
 
 const details = [
   { icon: <Video size={18} className="text-[#A6FF5D]" />, title: "Live Online", desc: "Interactive Zoom session" },
@@ -61,6 +62,10 @@ const MasterclassDetails = () => (
       </div>
       
     </div>
+    <div className="mt-15">
+      <Timer/>
+    </div>
+    
   </section>
 );
 
