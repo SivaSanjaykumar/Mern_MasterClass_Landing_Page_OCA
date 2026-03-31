@@ -21,7 +21,7 @@ const ScrollToTopBtn = () => {
       }
       className={`
         fixed bottom-6 right-6 z-50
-        w-11 h-11 flex items-center justify-center
+        w-9 h-9 flex items-center justify-center
         rounded-full bg-[#A6FF5D] text-black
         shadow-[0_0_20px_rgba(166,255,93,0.4)]
         transition-all duration-300
@@ -29,7 +29,7 @@ const ScrollToTopBtn = () => {
         ${show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10 pointer-events-none"}
       `}
     >
-      <ArrowUp size={18} />
+      <ArrowUp size={22} />
     </button>
   );
 };

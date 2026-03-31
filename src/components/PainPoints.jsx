@@ -73,7 +73,7 @@ const PainPoints = () => {
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.15 },
     );
 
     if (headingRef.current) observer.observe(headingRef.current);
@@ -144,17 +144,18 @@ const PainPoints = () => {
         {/* Heading */}
         <div ref={headingRef} className="text-center mb-12 fade-up">
           <h2 className="text-3xl md:text-5xl font-bold">
-            Are You <span className="text-[#A6FF5D] glow-pulse">...</span>
+            Still Stuck in the{" "}
+            <span className="text-[#90f73d] glow-pulse">Same Loop?</span>
           </h2>
         </div>
 
         {/* Grid */}
-        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 justify-items-center">
           {items.map((item, index) => (
             <div
               key={index}
               ref={(el) => (cardRefs.current[index] = el)}
-              className={`pain-card relative p-[1px] rounded-2xl bg-gradient-to-br from-[#A6FF5D]/20 to-white/5 fade-up card-${index} cursor-default w-full max-w-[260px]`}
+              className={`pain-card relative p-[1px] rounded-2xl bg-gradient-to-br from-[#A6FF5D]/20 to-white/5 fade-up card-${index} cursor-default w-full max-w-[350px]`}
             >
               <div className="card-inner flex flex-col items-center text-center gap-3 bg-[#111827] rounded-2xl p-6 transition-all duration-300 h-full min-h-[180px] justify-center">
                 {/* Icon box */}

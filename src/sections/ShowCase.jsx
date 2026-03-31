@@ -167,15 +167,15 @@ const VideoCard = ({ video, isCenter, onClick }) => {
             className="absolute bottom-0 left-0 right-0 p-3 z-10"
           >
             {/* Stars */}
-            <div className="flex gap-0.5 mb-2">
+            {/* <div className="flex gap-0.5 mb-2">
               {Array(video.stars).fill(0).map((_, i) => (
                 <Star key={i} size={12} fill="#A6FF5D" className="text-[#A6FF5D]" />
               ))}
             </div>
             {/* Quote */}
-            <p className="text-white text-xs leading-relaxed mb-2 line-clamp-2">
+            {/* <p className="text-white text-xs leading-relaxed mb-2 line-clamp-2">
               "{video.quote}"
-            </p>
+            </p> */} 
             <div className="flex items-center gap-2">
               <img src={video.thumb} className="w-7 h-7 rounded-full object-cover border border-[#A6FF5D]/40" alt="" />
               <div>
