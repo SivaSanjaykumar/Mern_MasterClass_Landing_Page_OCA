@@ -70,7 +70,7 @@ const Testimonials = () => {
         </div>
 
         {/* Single marquee row */}
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden max-w-[80%] mx-auto">
           {/* Edge fades */}
           <div className="absolute left-0 top-0 h-full w-16 sm:w-24 z-10 pointer-events-none"
             style={{ background: "linear-gradient(to right, #000, transparent)" }} />

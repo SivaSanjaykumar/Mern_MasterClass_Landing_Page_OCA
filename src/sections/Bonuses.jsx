@@ -284,7 +284,7 @@ const Bonuses = () => {
         </div>
 
         {/* Cards */}
-        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
+        <div className="max-w-[80%] mx-auto grid md:grid-cols-3 gap-6">
           {bonuses.map((item, index) => (
             <div
               key={index}
@@ -324,7 +324,7 @@ const Bonuses = () => {
         </div>
 
         {/* Certificate Section */}
-        <div className="mt-28 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div className="mt-28 max-w-[80%] mx-auto grid md:grid-cols-2 gap-12 items-center">
           {/* Left — Image */}
           <div
             ref={certImgRef}
