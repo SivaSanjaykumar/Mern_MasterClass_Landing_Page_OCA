@@ -11,6 +11,7 @@ import ShowCase from "./sections/ShowCase";
 import Testimonials from "./sections/Testimonials";
 import WhyDifferent from "./sections/WhyDifferent";
 import ScrollToTopBtn from "./components/ScrollToTopBtn";
+import CompaniesSection from "./sections/CompaniesSection";
 
 // ✅ Landing page as its own component
 const LandingPage = () => (
@@ -19,6 +20,7 @@ const LandingPage = () => (
     <ScrollToTopBtn/>
     <PainPoints />
     <ShowCase />
+    <CompaniesSection/>
     <FeaturesGrid />
     <WhyDifferent />
     <Testimonials />
