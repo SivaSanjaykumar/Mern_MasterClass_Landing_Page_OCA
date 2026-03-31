@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { Video, Clock, Calendar, Award, PlayCircle } from "lucide-react";
 import RegisterForm from "./RegisterForm";
 import Timer from "@/components/Timer";
