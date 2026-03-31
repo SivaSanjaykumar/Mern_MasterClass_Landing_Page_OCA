@@ -1,7 +1,7 @@
 import arulImg from "@/assets/OA_Photos/arul.jpeg";
-import priyadharshiniImg from "@/assets/OA_Photos/priyadharshini.jpeg";
+import priyadharshiniImg from "@/assets/OA_Photos/Priyadharshini.jpeg";
 import rakeshImg from "@/assets/OA_Photos/rakesh.png";
-import sanjayImg from "@/assets/OA_Photos/sanjay.png";
+import sanjayImg from "@/assets/OA_Photos/Sanjay.png";
 import sureshImg from "@/assets/OA_Photos/suresh.png";
 
 export const testimonialsData = [

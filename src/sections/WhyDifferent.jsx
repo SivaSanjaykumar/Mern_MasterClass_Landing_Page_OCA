@@ -1,45 +1,53 @@
 import { motion } from "motion/react";
-import { Check, X } from "lucide-react";
+import {
+  Briefcase,
+  Check,
+  Globe,
+  Handshake,
+  Map,
+  Rocket,
+  Trophy,
+  X,
+} from "lucide-react";
 
 const data = [
   {
     title: "Learning Approach",
-    icon: "🗺️",
+    icon: Map,
     other: "Random tutorials, no structure",
     you: "Step-by-step structured roadmap",
   },
   {
     title: "Projects",
-    icon: "🚀",
+    icon: Rocket,
     other: "Only basic demos",
     you: "Real-world production projects",
   },
   {
     title: "Support",
-    icon: "🤝",
+    icon: Handshake,
     other: "No guidance whatsoever",
     you: "Mentorship + community support",
   },
   {
     title: "Career Focus",
-    icon: "💼",
+    icon: Briefcase,
     other: "Just theory, no direction",
     you: "Job-ready skills + placement prep",
   },
   {
     title: "Projects Deployed",
-    icon: "🌐",
+    icon: Globe,
     other: "Local only, never goes live",
     you: "Deployed on Vercel & Render",
   },
   {
     title: "Certificate",
-    icon: "🏆",
+    icon: Trophy,
     other: "No proof of learning",
     you: "Verified completion certificate",
   },
 ];
-
 const WhyDifferent = () => {
   return (
     <section className="bg-black text-white py-12 sm:py-16 px-4 sm:px-6 relative overflow-hidden">
@@ -76,11 +84,19 @@ const WhyDifferent = () => {
         className="text-center mb-10 sm:mb-16"
       >
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
-          Why This <span className="text-[#A6FF5D]" style={{ textShadow: "0 0 30px rgba(166,255,93,0.5)" }}>Masterclass?</span>
+          Why This{" "}
+          <span
+            className="text-[#A6FF5D]"
+            style={{ textShadow: "0 0 30px rgba(166,255,93,0.5)" }}
+          >
+            Masterclass?
+          </span>
         </h2>
         <p className="text-gray-500 mt-3 text-sm px-2">
           Not just another course —{" "}
-          <span className="text-white font-medium">a complete career transformation.</span>
+          <span className="text-white font-medium">
+            a complete career transformation.
+          </span>
         </p>
       </motion.div>
 
@@ -107,14 +123,23 @@ const WhyDifferent = () => {
               key={index}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
+              transition={{
+                delay: index * 0.1,
+                duration: 0.5,
+                ease: [0.23, 1, 0.32, 1],
+              }}
               viewport={{ once: true }}
               className="grid grid-cols-3 gap-4 items-center"
             >
               {/* Title */}
               <div className="flex items-center gap-2.5 px-2">
-                <span className="text-lg">{item.icon}</span>
-                <span className="font-semibold text-sm text-white">{item.title}</span>
+                {(() => {
+                  const Icon = item.icon;
+                  return <Icon size={18} className="text-[#A6FF5D]" />;
+                })()}
+                <span className="font-semibold text-sm text-white">
+                  {item.title}
+                </span>
               </div>
 
               {/* Others */}
@@ -131,7 +156,9 @@ const WhyDifferent = () => {
                   <div className="w-5 h-5 rounded-full bg-[#A6FF5D]/15 border border-[#A6FF5D]/40 flex items-center justify-center flex-shrink-0">
                     <Check size={11} className="text-[#A6FF5D]" />
                   </div>
-                  <span className="text-sm text-white font-medium">{item.you}</span>
+                  <span className="text-sm text-white font-medium">
+                    {item.you}
+                  </span>
                 </div>
               </div>
             </motion.div>
@@ -146,17 +173,27 @@ const WhyDifferent = () => {
             key={index}
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: index * 0.08, duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
+            transition={{
+              delay: index * 0.08,
+              duration: 0.5,
+              ease: [0.23, 1, 0.32, 1],
+            }}
             viewport={{ once: true }}
           >
             {/* Card title */}
             <div className="flex items-center gap-2 mb-2 px-1">
-              <span className="text-base">{item.icon}</span>
-              <span className="text-xs font-bold tracking-widest uppercase text-gray-400">{item.title}</span>
+              {(() => {
+                const Icon = item.icon;
+                return <Icon size={16} className="text-[#A6FF5D]" />;
+              })()}
+              <span className="text-xs font-bold tracking-widest uppercase text-gray-400">
+                {item.title}
+              </span>
             </div>
 
             {/* Split card */}
-            <div className="rounded-2xl overflow-hidden border border-white/8"
+            <div
+              className="rounded-2xl overflow-hidden border border-white/8"
               style={{ background: "#0a0a0a" }}
             >
               {/* Others row */}
@@ -165,7 +202,9 @@ const WhyDifferent = () => {
                   <X size={12} className="text-red-400" />
                 </div>
                 <div className="flex-1">
-                  <p className="text-[10px] font-semibold tracking-widest uppercase text-gray-600 mb-0.5">Others</p>
+                  <p className="text-[10px] font-semibold tracking-widest uppercase text-gray-600 mb-0.5">
+                    Others
+                  </p>
                   <p className="text-sm text-gray-500">{item.other}</p>
                 </div>
               </div>
@@ -173,7 +212,10 @@ const WhyDifferent = () => {
               {/* You row — highlighted */}
               <div
                 className="flex items-center gap-3 px-4 py-3.5 relative overflow-hidden"
-                style={{ background: "linear-gradient(135deg, rgba(166,255,93,0.07) 0%, rgba(166,255,93,0.02) 100%)" }}
+                style={{
+                  background:
+                    "linear-gradient(135deg, rgba(166,255,93,0.07) 0%, rgba(166,255,93,0.02) 100%)",
+                }}
               >
                 {/* left accent bar */}
                 <div className="absolute left-0 top-0 bottom-0 w-[3px] rounded-r-full bg-[#A6FF5D]" />
@@ -181,7 +223,9 @@ const WhyDifferent = () => {
                   <Check size={12} className="text-[#A6FF5D]" />
                 </div>
                 <div className="flex-1">
-                  <p className="text-[10px] font-semibold tracking-widest uppercase text-[#A6FF5D]/70 mb-0.5">Ocean Academy</p>
+                  <p className="text-[10px] font-semibold tracking-widest uppercase text-[#A6FF5D]/70 mb-0.5">
+                    Ocean Academy
+                  </p>
                   <p className="text-sm text-white font-medium">{item.you}</p>
                 </div>
               </div>
@@ -200,7 +244,9 @@ const WhyDifferent = () => {
       >
         <p className="text-gray-500 text-sm">
           This isn't just learning —{" "}
-          <span className="text-[#A6FF5D] font-semibold">a career transformation system.</span>
+          <span className="text-[#A6FF5D] font-semibold">
+            a career transformation system.
+          </span>
         </p>
       </motion.div>
     </section>
