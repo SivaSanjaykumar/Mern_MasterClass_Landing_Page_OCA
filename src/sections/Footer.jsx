@@ -1,26 +1,25 @@
-import { MapPin, Phone, Mail, ArrowUp } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
 import { FaFacebookF, FaYoutube, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
-
 const Footer = () => {
   const navigate = useNavigate();
-  return (
-    <footer className="bg-[#0B1D2A] text-white px-6 py-10">
 
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+  return (
+    <footer className="bg-[#0B1D2A] text-white px-6 py-12">
+
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 text-center md:text-left">
 
         {/* ================= LEFT ================= */}
-        <div>
+        <div className="flex flex-col items-center md:items-start">
 
           {/* Logo */}
-          <div className="flex items-center gap-3 mb-4">
+          <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
             <img
               src="https://oceanacademy.in/_next/static/media/oa.9c315ba3.png"
               alt="Ocean Academy"
               className="h-10"
             />
-            
           </div>
 
           {/* Description */}
@@ -32,11 +31,11 @@ const Footer = () => {
           {/* Social */}
           <h3 className="text-[#A6FF5D] font-semibold mb-4">Follow Us</h3>
 
-          <div className="flex gap-4">
+          <div className="flex justify-center md:justify-start gap-4">
             {[
-              { Icon: FaFacebookF,  href: "https://www.facebook.com/oceanacademy.co.in/" },
-              { Icon: FaYoutube,    href: "https://youtube.com/@ocean_academy?si=ZuVRL9lTglv3WI9S" },
-              { Icon: FaInstagram,  href: "https://www.instagram.com/oceanacademy_official?igsh=Z2Z0Y2plMWQyd2lo" },
+              { Icon: FaFacebookF, href: "https://www.facebook.com/oceanacademy.co.in/" },
+              { Icon: FaYoutube, href: "https://youtube.com/@ocean_academy?si=ZuVRL9lTglv3WI9S" },
+              { Icon: FaInstagram, href: "https://www.instagram.com/oceanacademy_official?igsh=Z2Z0Y2plMWQyd2lo" },
               { Icon: FaLinkedinIn, href: "https://www.linkedin.com/company/oceanacademyedu/" },
             ].map(({ Icon, href }, i) => (
               <a
@@ -44,27 +43,26 @@ const Footer = () => {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center rounded-lg border border-white/10 hover:border-[#A6FF5D]/40 hover:scale-110 transition cursor-pointer"
+                className="w-10 h-10 flex items-center justify-center rounded-xl border border-white/10 hover:border-[#A6FF5D]/40 hover:scale-110 transition"
               >
                 <Icon size={18} className="text-gray-400 hover:text-[#A6FF5D]" />
               </a>
             ))}
           </div>
-
         </div>
 
         {/* ================= RIGHT ================= */}
-        <div>
+        <div className="flex flex-col items-center md:items-start">
 
           <h3 className="text-[#A6FF5D] font-semibold mb-6 text-lg">
             Contact Info
           </h3>
 
-          <div className="space-y-6 text-sm text-gray-300">
+          <div className="space-y-6 text-sm text-gray-300 w-full max-w-sm">
 
             {/* Address */}
-            <div className="flex gap-4">
-              <div className="p-2 rounded-lg bg-white/5 border border-white/10 h-fit">
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-3 text-center md:text-left">
+              <div className="p-2 rounded-lg bg-white/5 border border-white/10">
                 <MapPin size={18} />
               </div>
               <p>
@@ -74,7 +72,7 @@ const Footer = () => {
             </div>
 
             {/* Phone */}
-            <div className="flex gap-4 items-center">
+            <div className="flex items-center justify-center md:justify-start gap-3">
               <div className="p-2 rounded-lg bg-white/5 border border-white/10">
                 <Phone size={18} />
               </div>
@@ -82,29 +80,27 @@ const Footer = () => {
             </div>
 
             {/* Email */}
-            <div className="flex gap-4 items-center">
+            <div className="flex items-center justify-center md:justify-start gap-3">
               <div className="p-2 rounded-lg bg-white/5 border border-white/10">
                 <Mail size={18} />
               </div>
               <p>info@oceanacademy.in</p>
             </div>
-
           </div>
 
           {/* CTA */}
-          <button onClick={() => navigate("/faq")} className="mt-8 bg-[#A6FF5D] text-black px-6 py-3 rounded-xl font-medium hover:scale-105 transition">
+          <button
+            onClick={() => navigate("/faq")}
+            className="mt-8 bg-[#A6FF5D] text-black px-6 py-3 rounded-xl font-medium hover:scale-105 transition"
+          >
             FAQs
           </button>
-
         </div>
-
       </div>
 
       {/* ================= BOTTOM ================= */}
-      <div className="max-w-6xl mx-auto mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-center items-center text-sm text-gray-400">
-
+      <div className="max-w-6xl mx-auto mt-12 pt-6 border-t border-white/10 text-center text-sm text-gray-400">
         <p>© 2026 Ocean Academy. All Rights Reserved.</p>
-
       </div>
 
     </footer>
