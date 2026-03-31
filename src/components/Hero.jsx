@@ -116,7 +116,7 @@ const Hero = () => {
       </div>
 
       {/* Heading */}
-      <div className="relative z-10 text-2xl sm:text-3xl md:text-5xl lg:text-[64px] font-bold text-center max-w-4xl mt-6 leading-snug px-4 flex flex-wrap justify-center items-center gap-x-2 sm:gap-x-3 md:gap-x-4">
+      <div className="relative z-10 text-4xl sm:text-5xl md:text-5xl lg:text-[64px] font-bold text-center max-w-4xl mt-6 leading-snug px-4 flex flex-wrap justify-center items-center gap-x-2 sm:gap-x-3 md:gap-x-4">
         <BlurText
           text="Become a"
           delay={120}
@@ -133,14 +133,14 @@ const Hero = () => {
           className="text-[#A6FF5D]"
         />
         <BlurText
-          text="Stack Developer & Crack"
+          text="Stack Developer &"
           delay={120}
           animateBy="words"
           direction="top"
           stepDuration={0.4}
         />
         <BlurText
-          text="MNC Jobs"
+          text="Crack MNC Jobs"
           delay={120}
           animateBy="words"
           direction="top"
