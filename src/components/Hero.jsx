@@ -201,11 +201,48 @@ const Hero = () => {
 
       {/* Offer */}
       <div className="relative z-10 flex justify-center mt-6 sm:mt-8 px-4 mb-2">
-        <div className="flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 backdrop-blur animate-[pulse_2s_ease-in-out_infinite] text-xs sm:text-sm">
-          <Clock className="text-red-400" size={14} />
-          <span className="font-medium text-red-400 tracking-wide text-center">
-            Offer Ending Soon
-          </span>
+        <div className="relative group cursor-default select-none">
+          {/* Outer ambient glow */}
+          <div className="absolute -inset-[1px] rounded-full bg-gradient-to-r from-amber-500/0 via-amber-400/40 to-amber-500/0 blur-sm opacity-70 animate-[pulse_3s_ease-in-out_infinite]" />
+
+          {/* Main pill */}
+          <div
+            className="relative flex items-center gap-2.5 px-5 py-2.5 rounded-full
+                    bg-[#0d0d0d] border border-white/[0.08]
+                    shadow-[0_0_0_1px_rgba(251,191,36,0.08),inset_0_1px_0_rgba(255,255,255,0.05)]"
+          >
+            {/* Left flare dot */}
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-60" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-400" />
+            </span>
+
+            {/* Label */}
+            <span
+              className="text-[11px] sm:text-xs font-semibold tracking-[0.18em] uppercase"
+              style={{
+                background:
+                  "linear-gradient(90deg, #fbbf24 0%, #fde68a 50%, #fbbf24 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundSize: "200% auto",
+                animation: "shimmer 3s linear infinite",
+              }}
+            >
+              Offer Ending Soon
+            </span>
+
+            {/* Clock icon — right side */}
+            <Clock size={13} className="text-amber-400/70 shrink-0" />
+          </div>
+
+          {/* Shimmer keyframe */}
+          <style>{`
+      @keyframes shimmer {
+        0%   { background-position: 0% center; }
+        100% { background-position: 200% center; }
+      }
+    `}</style>
         </div>
       </div>
     </header>

@@ -10,34 +10,29 @@ const ReservedSeatBtn = ({ onClick, label = "Reserve Your Seat" }) => {
   return (
     <>
       <style>{`
-        @keyframes urgency-jitter {
-          0%   { transform: translateX(0) rotate(0deg); }
-          15%  { transform: translateX(-2px) rotate(-0.4deg); }
-          30%  { transform: translateX(2px) rotate(0.4deg); }
-          45%  { transform: translateX(-1px) rotate(-0.2deg); }
-          60%  { transform: translateX(1px) rotate(0.2deg); }
-          75%  { transform: translateX(-1px) rotate(0deg); }
-          90%  { transform: translateX(1px) rotate(0deg); }
-          100% { transform: translateX(0) rotate(0deg); }
-        }
+  @keyframes urgency-jitter {
+    0%, 100% { transform: scale(1); }
+    30% { transform: scale(1.04) rotate(-0.3deg); }
+    50% { transform: scale(1.02) rotate(0.3deg); }
+    70% { transform: scale(1.04); }
+  }
 
-        @keyframes pulse-glow {
-          0%, 100% { box-shadow: 0 0 8px 2px rgba(239,68,68,0.4); }
-          50%       { box-shadow: 0 0 18px 6px rgba(239,68,68,0.7); }
-        }
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 10px 3px rgba(166,255,93,0.5); }
+    50% { box-shadow: 0 0 24px 8px rgba(166,255,93,0.8); }
+  }
 
-        .urgency-jitter {
-          animation:
-            urgency-jitter 0.5s ease-in-out 2s 3,       /* jitters 3× after 2s pause */
-            urgency-jitter 0.5s ease-in-out 6s infinite; /* then repeats every 8s */
-        }
+  .urgency-jitter {
+    animation:
+      urgency-jitter 0.7s ease-in-out 3s infinite;
+  }
 
-        .urgency-jitter:hover {
-          animation: none; /* stop jitter on hover — user is already engaged */
-          transform: scale(1.05);
-          transition: transform 0.3s ease;
-        }
-      `}</style>
+  .urgency-jitter:hover {
+    animation: none;
+    transform: scale(1.06);
+    transition: transform 0.3s ease;
+  }
+`}</style>
 
       <div className="mt-10 flex justify-center">
         <div

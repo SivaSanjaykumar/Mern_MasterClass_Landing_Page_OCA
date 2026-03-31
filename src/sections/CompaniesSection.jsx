@@ -1,6 +1,7 @@
 // CompaniesSection.jsx
+import { useState } from "react";
 import HCL from "../assets/logos/HCL.png";
-import Cognizant from "../assets/logos/Cognizant.svg";
+import Cognizant from "../assets/logos/cognizant.png";
 import Hexaware from "../assets/logos/Hexaware.png";
 import TCS from "../assets/logos/TCS.png";
 import TECHMAHINDRA from "../assets/logos/TECHMAHINDRA.png";
@@ -18,7 +19,7 @@ const companies = [
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Wipro_Primary_Logo_Color_RGB.svg/1200px-Wipro_Primary_Logo_Color_RGB.svg.png",
   },
   { name: "TCS", logo: TCS },
-  { name: "Cognizant", logo: Cognizant },
+  { name: "Cognizant", logo: Cognizant, invert: true },
   { name: "Tech Mahindra", logo: TECHMAHINDRA },
   {
     name: "Google",
@@ -28,12 +29,50 @@ const companies = [
     name: "Lenovo",
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Lenovo_logo_2015.svg/1200px-Lenovo_logo_2015.svg.png",
   },
-  {
-    name: "Accenture",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Accenture.svg/1200px-Accenture.svg.png",
-  },
   { name: "Capgemini", logo: Capgemini },
 ];
+
+const LogoCard = ({ company }) => {
+  const [isColored, setIsColored] = useState(false);
+
+  return (
+    <div
+      key={company.name}
+      onClick={() => setIsColored((prev) => !prev)}
+      title={isColored ? "Click to grayscale" : "Click to reveal color"}
+      className="shrink-0 flex items-center justify-center
+                 w-40 sm:w-52 h-16 sm:h-20 px-6 py-4
+                 cursor-pointer select-none
+                 transition-all duration-300"
+    >
+      <img
+        src={company.logo}
+        alt={company.name}
+        className="max-h-10 sm:max-h-12 w-auto object-contain"
+        style={{
+          filter: isColored
+            ? company.invert
+              ? "invert(1)"
+              : "grayscale(0%) brightness(1)"
+            : company.invert
+            ? "invert(1) brightness(10) opacity(0.5)"
+            : "grayscale(100%) brightness(1.1) opacity(0.7)",
+          transition: "all 0.4s ease",
+        }}
+        onError={(e) => {
+          e.target.style.display = "none";
+          e.target.nextSibling.style.display = "flex";
+        }}
+      />
+      <span
+        className="text-xs font-semibold text-gray-500"
+        style={{ display: "none" }}
+      >
+        {company.name}
+      </span>
+    </div>
+  );
+};
 
 const CompaniesSection = () => (
   <>
@@ -75,6 +114,11 @@ const CompaniesSection = () => (
           We don't just teach — we help shape careers. Our students have secured
           placements across top firms and MNCs.
         </p>
+
+        {/* Hint text */}
+        <p className="text-gray-600 text-xs mt-3 italic">
+          Click any logo to reveal its color
+        </p>
       </div>
 
       {/* Divider line */}
@@ -96,43 +140,19 @@ const CompaniesSection = () => (
           }}
         />
 
-        {/* Track */}
+        {/* Track — duplicated for seamless loop */}
         <div
-          className="logo-track flex items-center gap-8 sm:gap-12 py-4"
+          className="logo-track flex items-center gap-2 sm:gap-12 py-4"
           style={{ width: "max-content" }}
         >
           {[...companies, ...companies].map((company, i) => (
-            <div
-              key={i}
-              className="shrink-0 flex items-center justify-center
-                         w-32 sm:w-40 h-14 sm:h-16 px-5 py-3
-                         rounded-2xl border border-white/8 bg-white/[0.03]"
-            >
-              <img
-                src={company.logo}
-                alt={company.name}
-                className="max-h-7 sm:max-h-8 w-auto object-contain
-                            opacity-80"
-                onError={(e) => {
-                  e.target.style.display = "none";
-                  e.target.nextSibling.style.display = "flex";
-                }}
-              />
-              <span
-                className="text-xs font-semibold text-gray-500"
-                style={{ display: "none" }}
-              >
-                {company.name}
-              </span>
-            </div>
+            <LogoCard key={i} company={company} />
           ))}
         </div>
       </div>
 
       {/* Divider line */}
       <div className="max-w-[80%] mx-auto h-[1px] bg-gradient-to-r from-transparent via-[#A6FF5D]/20 to-transparent mt-10" />
-
-      {/* Stats row */}
     </section>
   </>
 );

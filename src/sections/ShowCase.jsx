@@ -344,7 +344,7 @@ const ShowCase = () => {
       >
         {[
           { value: "1000+", label: "Students Trained" },
-          { value: "4.8★", label: "Average Rating" },
+          { value: "4.8", label: "Average Rating" },
           { value: "95%", label: "Placement Rate" },
         ].map((stat) => (
           <div key={stat.label} className="text-center">

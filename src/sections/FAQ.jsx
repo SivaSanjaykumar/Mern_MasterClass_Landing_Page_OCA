@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { ChevronDown, MessageCircle } from "lucide-react";
+import { Briefcase, ChevronDown, MessageCircle, Target, Wrench } from "lucide-react";
 
 const FAQ_CATEGORIES = [
   {
     label: "General",
-    emoji: "🎯",
+    emoji: <Target size={16} />,
     faqs: [
       {
         question: "Is this masterclass suitable for complete beginners?",
@@ -46,7 +46,7 @@ const FAQ_CATEGORIES = [
   },
   {
     label: "Placement",
-    emoji: "💼",
+    emoji: <Briefcase size={16} />,
     faqs: [
       {
         question: "Do you guarantee placement after the masterclass?",
@@ -64,7 +64,8 @@ const FAQ_CATEGORIES = [
           "Yes. Our placement team conducts mock technical interviews, HR rounds, and aptitude sessions. You will also get access to our curated question bank covering DSA basics, JavaScript fundamentals, React, Node.js, and system design concepts frequently asked in MNC interviews.",
       },
       {
-        question: "Is placement support available for freshers and career switchers?",
+        question:
+          "Is placement support available for freshers and career switchers?",
         answer:
           "Absolutely. Our program is specifically designed for freshers with no experience and professionals switching careers into tech. We tailor the resume and interview preparation based on your background to maximize your chances.",
       },
@@ -82,7 +83,7 @@ const FAQ_CATEGORIES = [
   },
   {
     label: "Tech",
-    emoji: "⚙️",
+    emoji: <Wrench size={16} />,
     faqs: [
       {
         question: "What tech stack will be taught in detail?",
@@ -130,7 +131,9 @@ const FAQItem = ({ faq, index, isOpen, onToggle }) => (
       background: isOpen
         ? "linear-gradient(135deg, rgba(166,255,93,0.07) 0%, rgba(255,255,255,0.02) 100%)"
         : "transparent",
-      border: isOpen ? "1px solid rgba(166,255,93,0.25)" : "1px solid rgba(255,255,255,0.07)",
+      border: isOpen
+        ? "1px solid rgba(166,255,93,0.25)"
+        : "1px solid rgba(255,255,255,0.07)",
       transition: "border-color 0.3s, background 0.3s",
     }}
   >
@@ -142,9 +145,13 @@ const FAQItem = ({ faq, index, isOpen, onToggle }) => (
         <span
           className="mt-0.5 text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
           style={{
-            background: isOpen ? "rgba(166,255,93,0.15)" : "rgba(255,255,255,0.06)",
+            background: isOpen
+              ? "rgba(166,255,93,0.15)"
+              : "rgba(255,255,255,0.06)",
             color: isOpen ? "#A6FF5D" : "#666",
-            border: isOpen ? "1px solid rgba(166,255,93,0.3)" : "1px solid rgba(255,255,255,0.1)",
+            border: isOpen
+              ? "1px solid rgba(166,255,93,0.3)"
+              : "1px solid rgba(255,255,255,0.1)",
             transition: "all 0.3s",
             fontSize: "10px",
           }}
@@ -162,8 +169,12 @@ const FAQItem = ({ faq, index, isOpen, onToggle }) => (
       <div
         className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center mt-0.5 transition-all duration-300"
         style={{
-          background: isOpen ? "rgba(166,255,93,0.15)" : "rgba(255,255,255,0.05)",
-          border: isOpen ? "1px solid rgba(166,255,93,0.3)" : "1px solid rgba(255,255,255,0.08)",
+          background: isOpen
+            ? "rgba(166,255,93,0.15)"
+            : "rgba(255,255,255,0.05)",
+          border: isOpen
+            ? "1px solid rgba(166,255,93,0.3)"
+            : "1px solid rgba(255,255,255,0.08)",
         }}
       >
         <ChevronDown
@@ -228,7 +239,10 @@ const FAQ = () => {
       >
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
           Frequently Asked{" "}
-          <span className="text-[#A6FF5D]" style={{ textShadow: "0 0 30px rgba(166,255,93,0.4)" }}>
+          <span
+            className="text-[#A6FF5D]"
+            style={{ textShadow: "0 0 30px rgba(166,255,93,0.4)" }}
+          >
             Questions
           </span>
         </h2>
@@ -251,10 +265,19 @@ const FAQ = () => {
             onClick={() => handleCategoryChange(i)}
             className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300"
             style={{
-              background: activeCategory === i ? "rgba(166,255,93,0.12)" : "rgba(255,255,255,0.04)",
-              border: activeCategory === i ? "1px solid rgba(166,255,93,0.4)" : "1px solid rgba(255,255,255,0.08)",
+              background:
+                activeCategory === i
+                  ? "rgba(166,255,93,0.12)"
+                  : "rgba(255,255,255,0.04)",
+              border:
+                activeCategory === i
+                  ? "1px solid rgba(166,255,93,0.4)"
+                  : "1px solid rgba(255,255,255,0.08)",
               color: activeCategory === i ? "#A6FF5D" : "#888",
-              boxShadow: activeCategory === i ? "0 0 16px rgba(166,255,93,0.12)" : "none",
+              boxShadow:
+                activeCategory === i
+                  ? "0 0 16px rgba(166,255,93,0.12)"
+                  : "none",
             }}
           >
             <span>{cat.emoji}</span>
@@ -293,12 +316,15 @@ const FAQ = () => {
         <div
           className="flex flex-col sm:flex-row items-center justify-between gap-4 rounded-2xl p-5 sm:p-6"
           style={{
-            background: "linear-gradient(135deg, rgba(166,255,93,0.06) 0%, rgba(255,255,255,0.02) 100%)",
+            background:
+              "linear-gradient(135deg, rgba(166,255,93,0.06) 0%, rgba(255,255,255,0.02) 100%)",
             border: "1px solid rgba(166,255,93,0.15)",
           }}
         >
           <div>
-            <p className="text-white font-semibold text-sm sm:text-base">Still have questions?</p>
+            <p className="text-white font-semibold text-sm sm:text-base">
+              Still have questions?
+            </p>
             <p className="text-gray-500 text-xs sm:text-sm mt-0.5">
               Our team typically replies within a few hours.
             </p>
