@@ -86,7 +86,7 @@ const Footer = () => {
             </div>
 
             {/* Phone */}
-            <div className="flex flex-col items-center gap-3 justify-start sm:flex flex-row items-center">
+            <div className="flex flex-col sm:flex-row sm:items-center items-center gap-3 justify-start">
               <div className="p-2 rounded-lg bg-white/5 border border-white/10">
                 <Phone size={18} />
               </div>
@@ -94,7 +94,7 @@ const Footer = () => {
             </div>
 
             {/* Email */}
-            <div className="flex flex-col items-center gap-3 justify-start md:flex flex-row items-center">
+            <div className="flex flex-col sm:flex-row sm:items-center items-center gap-3 justify-start">
               <div className="p-2 rounded-lg bg-white/5 border border-white/10">
                 <Mail size={18} />
               </div>
