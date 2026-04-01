@@ -12,22 +12,23 @@ import Testimonials from "./sections/Testimonials";
 import WhyDifferent from "./sections/WhyDifferent";
 import ScrollToTopBtn from "./components/ScrollToTopBtn";
 import CompaniesSection from "./sections/CompaniesSection";
+import GallerySection from "./sections/GallerySection";
 
 // ✅ Landing page as its own component
 const LandingPage = () => (
   <div>
-    <Hero />
-    <ScrollToTopBtn/>
-    <PainPoints />
-    <ShowCase />
-    <CompaniesSection/>
-    <FeaturesGrid />
-    <WhyDifferent />
-    <Testimonials />
-    <Bonuses />
-    <MasterclassDetails />
-    <AboutSection />
-    <Footer />
+<Hero />
+<ScrollToTopBtn/>
+<WhyDifferent />      
+<FeaturesGrid />       
+<ShowCase />           
+<CompaniesSection />  
+<Testimonials />      
+<GallerySection />     
+<MasterclassDetails /> 
+<Bonuses />           
+<AboutSection />
+<Footer />
   </div>
 );
 

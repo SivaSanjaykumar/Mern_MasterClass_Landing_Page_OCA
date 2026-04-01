@@ -112,7 +112,7 @@ const AboutSection = () => {
 
       <section
         ref={sectionRef}
-        className="bg-black text-white pt-20 pb-10 px-6 relative overflow-hidden"
+        className="bg-black text-white pt-10 pb-17 px-6 relative overflow-hidden"
       >
         {/* Background ambient orbs */}
         <div className="glow-breathe absolute -top-24 left-1/4 w-[500px] h-[500px] rounded-full bg-[#A6FF5D]/8 blur-[120px] pointer-events-none" />

@@ -6,28 +6,32 @@ import TCS from "../assets/logos/TCS.png";
 import TECHMAHINDRA from "../assets/logos/TECHMAHINDRA.png";
 import Capgemini from "../assets/logos/Capgemini.png";
 import accenture from "../assets/logos/accenture.png";
+import Google from "../assets/logos/Google.png";
+import Lenovo from "../assets/logos/Lenovo.png";
+import Wipro from "../assets/logos/Wipro.png";
+import Infosys from "../assets/logos/Infosys.png";
 
 const companies = [
   { name: "HCL", logo: HCL },
   { name: "Hexaware", logo: Hexaware },
   {
     name: "Infosys",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Infosys_logo.svg/1200px-Infosys_logo.svg.png",
+    logo: Infosys,
   },
   {
     name: "Wipro",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Wipro_Primary_Logo_Color_RGB.svg/1200px-Wipro_Primary_Logo_Color_RGB.svg.png",
+    logo: Wipro,
   },
   { name: "TCS", logo: TCS },
   { name: "Cognizant", logo: Cognizant, grayscaleOnly: true },
   { name: "Tech Mahindra", logo: TECHMAHINDRA, large: true },
   {
     name: "Google",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png",
+    logo: Google,
   },
   {
     name: "Lenovo",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Lenovo_logo_2015.svg/1200px-Lenovo_logo_2015.svg.png",
+    logo: Lenovo,
   },
   { name: "Accenture", logo: accenture, invert: true, large: true },
   { name: "Capgemini", logo: Capgemini, large: true },
@@ -46,13 +50,11 @@ const getFilter = (company) => {
 };
 
 const LogoCard = ({ company }) => (
-  <div className="shrink-0 flex items-center justify-center px-8 sm:px-10 py-4">
+  <div className="shrink-0 flex items-center justify-center px-8 sm:px-6.5 py-4">
     <img
       src={company.logo}
       alt={company.name}
-      className={`w-auto object-contain ${
-        company.large ? "max-h-17 sm:max-h-16" : "max-h-10 sm:max-h-11"
-      }`}
+      className={`w-auto object-contain max-h-17 sm:max-h-16 `}
       style={{ filter: getFilter(company) }}
       onError={(e) => {
         e.target.style.display = "none";
@@ -131,6 +133,7 @@ const CompaniesSection = () => (
 
       {/* Divider */}
       <div className="max-w-[80%] mx-auto h-[1px] bg-gradient-to-r from-transparent via-[#A6FF5D]/20 to-transparent mt-10" />
+    
     </section>
   </>
 );

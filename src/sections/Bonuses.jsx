@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { FileText, Users, Briefcase, Check } from "lucide-react";
 import certificate from "../assets/certificate.png";
+import ReservedSeatBtn from "@/components/ReservedSeatBtn";
 
 const bonuses = [
   {
@@ -371,6 +372,7 @@ const Bonuses = () => {
             </ul>
           </div>
         </div>
+        <ReservedSeatBtn/>
       </section>
     </>
   );

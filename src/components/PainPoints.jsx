@@ -142,6 +142,14 @@ const PainPoints = () => {
       `}</style>
 
       <section className="bg-black text-white py-10 px-6 overflow-hidden">
+        {/* ── BADGE ── */}
+        {/* Section Divider */}
+        <div className="relative mt-5 mb-5 flex justify-center">
+          <div className="w-[85%] h-[1px] bg-gradient-to-r from-transparent via-[#A6FF5D]/40 to-transparent" />
+
+          {/* subtle glow */}
+          <div className="absolute w-[60%] h-6 bg-[#A6FF5D]/10 blur-2xl top-[-10px]" />
+        </div>
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}

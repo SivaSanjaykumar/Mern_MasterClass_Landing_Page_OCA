@@ -245,6 +245,7 @@ const Hero = () => {
     `}</style>
         </div>
       </div>
+      
     </header>
   );
 };

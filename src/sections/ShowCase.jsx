@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence, useInView } from "motion/react";
 import { Play, Pause, ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
+import ReservedSeatBtn from "@/components/ReservedSeatBtn";
 
 // ── Video data — replace src/thumb with your actual URLs ──────────
 const VIDEOS = [
@@ -353,6 +354,7 @@ const ShowCase = () => {
           </div>
         ))}
       </motion.div>
+      
     </section>
   );
 };

@@ -11,9 +11,9 @@ const Footer = () => {
   const navigate = useNavigate();
 
   return (
-    <footer className="bg-[#0B1D2A] text-white px-6 sm:px-10 lg:px-16 py-14">
+    <footer className="bg-[#0B1D2A] text-white px-6  sm:px-10 lg:px-10 py-14">
       {/* Container */}
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-12 md:gap-16 text-center md:text-left">
+      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-12 md:gap-16 text-center md:text-left">
         {/* ================= LEFT ================= */}
         <div className="flex flex-col items-center md:items-start space-y-5 gap-4 max-w-sm">
           {/* Logo */}
@@ -86,7 +86,7 @@ const Footer = () => {
             </div>
 
             {/* Phone */}
-            <div className="flex items-center gap-3 justify-center md:flex flex-col items-center">
+            <div className="flex flex-row items-center gap-3 justify-start md:flex flex-col items-center">
               <div className="p-2 rounded-lg bg-white/5 border border-white/10">
                 <Phone size={18} />
               </div>
@@ -94,7 +94,7 @@ const Footer = () => {
             </div>
 
             {/* Email */}
-            <div className="flex items-center gap-3 justify-center md:flex flex-col items-center">
+            <div className="flex flex-row items-center gap-3 justify-start md:flex flex-col items-center">
               <div className="p-2 rounded-lg bg-white/5 border border-white/10">
                 <Mail size={18} />
               </div>

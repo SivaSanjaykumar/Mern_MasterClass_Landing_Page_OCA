@@ -1,3 +1,4 @@
+import ReservedSeatBtn from "@/components/ReservedSeatBtn";
 import { testimonialsData } from "@/data/testimonialsData";
 import { Star } from "lucide-react";
 import { useRef } from "react";
@@ -58,7 +59,7 @@ const Testimonials = () => {
         }
       `}</style>
 
-      <section className="bg-black text-white py-12 sm:py-16 overflow-hidden">
+      <section className="bg-black text-white py-12 sm:py-10 overflow-hidden">
         {/* Heading */}
         <div className="text-center mb-12 px-4">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
@@ -89,6 +90,7 @@ const Testimonials = () => {
             ))}
           </div>
         </div>
+        <ReservedSeatBtn/>
       </section>
     </>
   );
